@@ -1,0 +1,289 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #101014;
+    color: #f5f5f5;
+    min-height: 100vh;
+}
+
+header {
+    background: #17171d;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+
+header h1 {
+    color: #e50914;
+    font-size: 28px;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover,
+nav a.ativo {
+    color: #e50914;
+}
+
+.hero {
+    min-height: 420px;
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, #17171d 25%, rgba(16, 16, 20, .75), #101014), radial-gradient(circle at 75% 40%, #6b1117, #101014 45%);
+}
+
+.hero div {
+    max-width: 620px;
+}
+
+.tag {
+    color: #e50914;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h2 {
+    font-size: 46px;
+    margin: 14px 0;
+}
+
+.hero p:not(.tag) {
+    font-size: 18px;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.botao,
+.filtros button {
+    display: inline-block;
+    margin-top: 25px;
+    background: #e50914;
+    color: white;
+    padding: 12px 20px;
+    border: 0;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.secao {
+    padding: 45px 7%;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.secao > h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background: #1b1b22;
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 18px;
+    box-shadow: 0 5px 18px #0005;
+}
+
+.card h3,
+.card p,
+.card span {
+    margin-left: 16px;
+}
+
+.card h3 {
+    margin-top: 15px;
+}
+
+.card p {
+    color: #aaa;
+    margin-top: 7px;
+}
+
+.card span {
+    display: block;
+    color: #ffd34e;
+    margin-top: 10px;
+}
+
+.capa {
+    height: 240px;
+    background: linear-gradient(145deg, #292936, #4b1015);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.capa1 {
+    background: linear-gradient(145deg, #14253a, #7b3d18);
+}
+
+.capa2 {
+    background: linear-gradient(145deg, #16415b, #78151e);
+}
+
+.capa3 {
+    background: linear-gradient(145deg, #30131a, #8c2525);
+}
+
+.capa4 {
+    background: linear-gradient(145deg, #182a48, #5a2c65);
+}
+
+.busca {
+    width: 100%;
+    max-width: 600px;
+    padding: 15px;
+    border-radius: 7px;
+    border: 1px solid #444;
+    background: #1b1b22;
+    color: white;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.filtros {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.filtros button {
+    margin: 0;
+    background: #2a2a33;
+}
+
+.filtros button:hover {
+    background: #e50914;
+}
+
+.generos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.generos a {
+    background: #1b1b22;
+    color: white;
+    text-decoration: none;
+    padding: 25px;
+    border-radius: 10px;
+    font-size: 35px;
+}
+
+.generos strong {
+    display: block;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.generos small {
+    font-size: 14px;
+    color: #aaa;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #17171d;
+    color: #888;
+    margin-top: 30px;
+}
+
+@media(max-width:900px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .generos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h2 {
+        font-size: 36px;
+    }
+}
+
+@media(max-width:600px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .cards,
+    .generos {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 360px;
+        padding: 50px 7%;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 13px;
+    }
+
+    .capa {
+        height: 220px;
+    }
+}
+/* Busca por API */
+[hidden] { display: none !important; }
+.api-busca { margin: 0 0 42px; padding: 24px; background: #17171d; border: 1px solid #303039; border-radius: 12px; }
+.api-busca h3 { font-size: 22px; margin-bottom: 8px; }
+.api-busca > p { color: #bbb; line-height: 1.5; margin-bottom: 14px; }
+.api-form { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.api-form .busca { margin: 0; flex: 1 1 260px; max-width: none; }
+.api-form .botao { margin: 0; font: inherit; }
+.api-form button:disabled { opacity: .6; cursor: wait; }
+.mensagem { min-height: 24px; margin-top: 14px !important; color: #eee !important; }
+.api-card { display: flex; flex-direction: column; }
+.poster-api { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; background: #292936; }
+.api-card-conteudo { padding: 14px 16px 18px; }
+.api-card h4 { font-size: 16px; line-height: 1.4; }
+.api-card p { margin: 7px 0 0; color: #aaa; font-size: 14px; }
+.api-card a { display: inline-block; margin-top: 12px; color: #ff626a; font-weight: bold; text-decoration: none; }
+.api-card a:hover { text-decoration: underline; }
+.titulo-catalogo { margin-top: 28px; }
+@media (max-width: 600px) {
+  .api-busca { padding: 16px; }
+  .api-form .botao { width: 100%; }
+}
